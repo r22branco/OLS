@@ -1,0 +1,11 @@
+column,source_dataset_code,source_sheet,source_file,original_unit,reference_year,transformed,transformation_detail
+hourly_wage_econ,lc_ncostot_r2,Sheet 85,lc_ncostot_r2__custom_21553582_spreadsheet.xlsx,EUR per hour worked,2020,False,none — raw passthrough
+hourly_wage_tour,lc_ncostot_r2,Sheet 97,lc_ncostot_r2__custom_21553582_spreadsheet.xlsx,EUR per hour worked,2020,False,none — raw passthrough
+wage_ratio,lc_ncostot_r2,Sheets 85 & 97,lc_ncostot_r2__custom_21553582_spreadsheet.xlsx,ratio (dimensionless),2020,True,wage_ratio = hourly_wage_tour (Sheet 97) / hourly_wage_econ (Sheet 85)
+tourism_intensity,tour_occ_ninat,Sheet 56,tour_occ_ninat$defaultview_spreadsheet.xlsx,"nights per 1,000 inhabitants (Eurostat pre-computed; NOT divided by population in this script)",2020,False,none — raw passthrough
+gdp_pps,sdg_10_10,Sheet 2,sdg_10_10$defaultview_spreadsheet.xlsx,"volume index, EU27_2020=100 (PPS-adjusted)",2020,False,none — raw passthrough
+vet_share,educ_uoe_enrs05,Sheets 1 & 3,educ_uoe_enrs05__custom_21553872_spreadsheet.xlsx,ratio (dimensionless),2020,True,vet_share = vocational upper-secondary enrolment (Sheet 3) / total upper-secondary enrolment (Sheet 1)
+unemployment_rate,une_rt_a,"Data sheet — Sex=Total, Age=20-64, Unit=% of labour force block",une_rt_a__custom_21962149_spreadsheet.xlsx,% of population in the labour force,2020,False,none — raw passthrough (filtered to the correct Sex/Age/Unit block within the combined sheet)
+ln_tourism,tour_occ_ninat,Sheet 56,tour_occ_ninat$defaultview_spreadsheet.xlsx,natural log of tourism_intensity,2020,True,ln_tourism = ln(tourism_intensity)
+ln_gdp,sdg_10_10,Sheet 2,sdg_10_10$defaultview_spreadsheet.xlsx,natural log of gdp_pps,2020,True,ln_gdp = ln(gdp_pps)
+country,all sources,"GEO (Labels) column, all sheets",all files,text — country name,2020,False,"none — passthrough, used as merge key across all sources"
